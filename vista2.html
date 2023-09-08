@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+      function validar(f) {
+        var ok = true;
+        var msg = "Debe Completar La Validacion De Los Campos";
+
+        if (f.Nombre.value == "" || f.Paterno.value == "" || f.Materno.value == "" || f.CI.value == "" || f.Direccion.value == "" || f.Email.value == "" || f.Edad.value == "") {
+          alert("Rellene Los Campos Vacios");
+          ok = false;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <form method="post" action="controlador2.php" onsubmit="return validar(this)">
+      Nombre: <input type="text" name="nombre" required minlength="3" maxlength="50" pattern="[A-Z]+" title="Solo Mayúsculas - Números No - Caracteres 3-50">
+      <br><br>
+
+      Paterno: <input type="text" name="paterno" required minlength="3" maxlength="50" pattern="[A-Z]+" title="Solo Mayúsculas - Números No - Caracteres 3-50">
+      <br><br>
+
+      Materno: <input type="text" name="materno" required minlength="3" maxlength="50" pattern="[A-Z]+" title="Solo Mayúsculas - Números No - Caracteres 3-50">
+      <br><br>
+
+      CI: <input type="number" name="ci" required>
+      <br><br>
+
+      Direccion: <input type="text" name="direccion" required maxlength="100" pattern="[A-Z0-9]+" title="Solo Mayúsculas - Caracteres 1-100" titte="Solo Mayúsculas - Caracteres Max 100">
+      <br><br>
+
+      Email: <input type="email" name="email" required>
+      <br><br>
+
+      Edad: <input type="number" name="edad" required min="0" max="100">
+      <br><br>
+
+      Fecha Nacimiento: <input type="date" name="fecha" required min="1900-01-01" max="2023-08-24" title="Mínimo 1900-01-01">
+      <br><br>
+
+      Teléfono Fijo: <input type="text" name="tfijo" required minlength="7" maxlength="7" pattern="[0-9]+" title="Caracteres Obligatorios 7 - Solo Números">
+      <br><br>
+
+      Teléfono Móvil: <input type="text" name="tmovil" required pattern="\+\d{1,4} [0-9]{5-10}" title="Formato '+1234 1234567'">
+      <br><br>
+
+      Lugar De Nacimiento: <select name="nacimiento" required>
+        <option value="" disabled selected>Seleccione Un Lugar</option>
+        <option value="Cochabamba">Cochabamba</option>
+        <option value="Santa Cruz">Santa Cruz</option>
+        <option value="La Paz">La Paz</option>
+      </select>
+      <br><br>
+
+      País: <select name="pais" required>
+        <option value="" disabled selected>Seleccione Un País</option>
+        <option value="Bolivia">Bolivia</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Chile">Chile</option>
+        <option value="Uruguay">Uruguay</option>
+      </select>
+      <br><br>
+
+      Carrera: <select name="carrera" required>
+        <option value="" disabled selected>Seleccione Una Carrera</option>
+        <option value="Sistemas">Ing Sistemas</option>
+        <option value="Comercial">Ing Comercial</option>
+        <option value="Financiera">Ing Financiera</option>
+        <option value="Civil">Ing Civil</option>
+        <option value="Medicina">Medicina</option>
+        <option value="Derecho">Derecho</option>
+        <option value="Adm Empresas">Administración Empresas</option>
+        <option value="Psicología">Psicología</option>
+      </select>
+      <br><br>
+
+      <input type="submit">
+    </form>
+  </body>
+</html>
